@@ -1,0 +1,23 @@
+{
+	"name": "Number of custom metrics spiked up",
+	"type": "metric alert",
+	"query": "avg(last_4h):avg:datadog.estimated_usage.metrics.custom{*} > 350000",
+	"message": "{{#is_alert}} Number of custom metrics spiked up!!\n{{/is_alert}}\n\nNotify: @fernando.delolmo@datadoghq.com",
+	"tags": [],
+	"options": {
+		"notify_audit": false,
+		"locked": false,
+		"timeout_h": 0,
+		"new_host_delay": 300,
+		"require_full_window": true,
+		"notify_no_data": false,
+		"renotify_interval": "0",
+		"escalation_message": "",
+		"no_data_timeframe": null,
+		"include_tags": true,
+		"thresholds": {
+			"critical": 350000,
+			"warning": 330000
+		}
+	}
+}

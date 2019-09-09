@@ -1,0 +1,54 @@
+{
+	"name": "Number of indexed logs higher!!",
+	"type": "log alert",
+	"query": "logs(\"*\").index(\"demo\").rollup(\"count\").last(\"1d\") > 16500000",
+	"message": "{{#is_alert}} To fix follow these steps\n1. Go to Logs/Logs&Analytics\n2. Check out the last day logs and group them by ‘’Service’’ or ‘’Status’’, set roll up every 1hour\n3. After seeing the biggest offenders, go to Logs/Configuration/Indexes/ and define the query and the % exclusion\n{{/is_alert}}\n\nNotify: @fernando.delolmo@datadoghq.com \n}",
+	"tags": [],
+	"options": {
+		"queryConfig": {
+			"timeRange": {
+				"from": 1563700632224,
+				"to": 1568020632224,
+				"live": true
+			},
+			"queryString": "*",
+			"queryIsFailed": false,
+			"logset": {
+				"id": "12",
+				"name": "demo",
+				"type": "logs",
+				"dailyLimit": 400000000,
+				"rateLimited": false,
+				"scopeId": "12",
+				"query": "",
+				"retention": 30,
+				"readDataAccess": true,
+				"dailyQuotaDisabled": false
+			}
+		},
+		"aggregation": {
+			"metric": "count",
+			"type": "count",
+			"groupBy": ""
+		},
+		"thresholds": {
+			"comparison": ">",
+			"period": {
+				"value": "last_1d",
+				"seconds": 86400
+			},
+			"critical": "16500000",
+			"timeAggregator": "avg",
+			"warning": 15000000
+		},
+		"enable_logs_sample": true,
+		"notify_audit": false,
+		"locked": false,
+		"timeout_h": 0,
+		"renotify_interval": 0,
+		"include_tags": true,
+		"new_host_delay": 300,
+		"notify_no_data": false,
+		"no_data_timeframe": 2
+	}
+}
