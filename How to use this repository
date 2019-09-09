@@ -1,0 +1,7 @@
+#The first thing we need to have clear is what kind of subscription we have and what are the commits of the contract.
+#Once we know them, we need to think about what kind of roll over we want to do with the monitor. This part is important in order to avoid receiving alerts too often. My suggestion is just to keep it as it is but it obvious depends on the use case.
+#What does this mean? Let's consider the roll up time as a window of time that we will give to the metric to be stable, or in other words, the gap time we give to the metric spikes to get back to normal.
+#More insights about the monitors
+# - Logs: the roll up is set in 24 hours 
+# - Infrastructure hosts: roll up set every 2 hours
+# - Custom metrics: roll up every 4 hours
