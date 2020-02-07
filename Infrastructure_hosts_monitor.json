@@ -2,7 +2,7 @@
 	"name": "Number of hosts spiked up",
 	"type": "metric alert",
 	"query": "avg(last_2h):avg:datadog.estimated_usage.hosts{*} > 550",
-	"message": "{{#is_alert}} Number of hosts spiked up!!\n{{/is_alert}}\n\nNotify: @fernando.delolmo@datadoghq.com",
+	"message": "{{#is_alert}} Number of hosts spiked up!!\n{{/is_alert}}\n\nNotify: @abc@xyz.com",
 	"tags": [],
 	"options": {
 		"notify_audit": false,
