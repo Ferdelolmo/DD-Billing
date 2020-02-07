@@ -1,0 +1,5 @@
+Go to Logs/Configuration/Indexes: https://cl.ly/7644adde1cd0
+Click on the Index (above, not the exclusion filter): https://cl.ly/9424d267c8d8
+Set your daily quota and hit the ''Save'' button: https://cl.ly/0cc248fb4eb7
+This way, your index will skip incoming logs events if volumes exceeds. As a way to control costs, it can work fine. Ideally if you are using Logs Rehydration, you can reload your logs from your storage bucket in case you skipped important logs you need visibility of.
+Do not hesitate to read this documentation: https://docs.datadoghq.com/logs/indexes/
